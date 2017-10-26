@@ -11,7 +11,7 @@
 		<table align="center">
 			<tr>
 				<td>EmployeeId</td>
-				<td><input name=employeeID /></td>
+				<td><input name=employeeID value="${RequestedBy}"/></td>
 				<td>
 			<tr>
 				<td>AssetId</td>

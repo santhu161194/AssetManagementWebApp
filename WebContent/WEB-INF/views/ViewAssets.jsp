@@ -67,6 +67,9 @@ th {
 				<td><j:out value="${asss.createdBy} "></j:out></td>
 				<td><j:out value="${asss.modifiedBy} "></j:out></td>
 				<j:if test="${viewdetails eq 'Available Assets'}">
+				<j:if test="${not empty RequestedBy}">
+				<td><a class="showhide" id="allocateAsset?assetID=<j:out value="${asss.assetId}"></j:out>?RequestedBy=<j:out value="${RequestedBy}"></j:out>">Allocate Asset</a></td>
+				</j:if>
 				<td><a class="showhide" id="allocateAsset?assetID=<j:out value="${asss.assetId}"></j:out>">Allocate Asset</a></td>
 				</j:if>
 				<j:if test="${viewdetails eq 'Allocated Assets'}">

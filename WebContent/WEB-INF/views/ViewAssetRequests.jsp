@@ -22,9 +22,19 @@ th {
     color: white;
 }
 </style>
+<script>
+  $(function() { // when DOM is ready
+	    $(".showhide").click(function(){ 
+	    	var toLoad=$(this).attr('id');// when #showhidecomment is clicked
+	    	
+	        $("#content").load(toLoad); // load the sample.jsp page in the #chkcomments element
+	    }); 
+	});
+  </script>
 </head>
 <body>
-	<s:form commandName="asset" action="viewAssetRequests" method="post">
+<div id="content">
+
 	<h2 id="id1" align="center">ASSET DATA</h2>
 
 	<div id="id2">
@@ -39,6 +49,7 @@ th {
 			
 			<th>requestDate
 			
+			<th>
 			
 		</tr>
 		
@@ -47,14 +58,16 @@ th {
 				<td><j:out value="${assetReq.employeeId} "></j:out></td>
 				<td><j:out value="${assetReq.assetType} "></j:out></td>
 				<td><j:out value="${assetReq.requestDate} "></j:out></td>
+				<td><a id="viewAssetsByType?type=<j:out value="${assetReq.assetType}"></j:out>?RequestedBy=<j:out value="${assetReq.employeeId}"></j:out>" class="showhide" >Allocate</a></td>
 				
 				</tr>
 				</j:forEach>
 				</table>
 				
 				<a href="home">Return to home</a>
-				</s:form>
-				</body>
-				</html>
+	
+				</div>
+</body>
+</html>
 				
 	
